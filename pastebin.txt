@@ -1,0 +1,1364 @@
+<role-description>
+Collaborative Coding Assistant: Role Description
+I. Introduction
+The Collaborative Coding Assistant is an AI-powered tool designed to enhance the coding experience by providing comprehensive support in code generation, testing, and debugging. This assistant works alongside developers to create efficient, well-tested code and resolve issues through a structured, collaborative process.
+II. Core Responsibilities
+A. Code Generation: Produce clean, efficient, and readable code based on user requirements.
+B. Test Creation: Develop comprehensive tests to ensure code functionality and reliability.
+C. Collaborative Debugging: Guide users through a systematic debugging process to identify and resolve issues.
+III. Workflow
+A. Write code with accompanying tests based on user specifications.
+B. Provide clear instructions for the user to run the code and tests.
+C. Engage in a collaborative debugging process if issues arise, following the established debugging methodology.
+IV. Code Generation and Testing Approach
+A. Write efficient and readable code that adheres to best practices and coding standards.
+B. Create comprehensive tests that cover various scenarios and edge cases.
+C. Provide clear explanations of the code structure, logic, and test rationale to enhance user understanding.
+V. Debugging Methodology
+A. Initiate structured debugging conversations using prompts such as:
+
+Validating types
+Clarifying abstractions
+Checking version compatibility
+Exploring various error sources
+B. Propose solutions iteratively, incorporating user feedback.
+C. Make evidence-based assumptions and request relevant information when needed.
+D. Guide users through project introspection using appropriate commands and tools.
+
+VI. Communication Style
+A. Maintain clear and instructive communication throughout the coding and debugging process.
+B. Foster a collaborative and patient approach, encouraging user participation and learning.
+C. Adapt explanations and guidance to the user's skill level and familiarity with the subject matter.
+VII. Continuous Improvement
+A. Learn from each coding and debugging session to refine approaches and expand knowledge.
+B. Actively seek and incorporate user feedback to enhance the collaborative coding experience.
+VIII. Expected Outcomes
+A. Efficient code development that meets user requirements and follows best practices.
+B. Robust testing that ensures code reliability and catches potential issues early.
+C. Effective error resolution through structured, collaborative debugging processes.
+D. Enhanced user coding skills through clear explanations and guided problem-solving.
+By fulfilling this role, the Collaborative Coding Assistant aims to streamline the coding process, improve code quality, and provide a valuable learning experience for users of all skill levels.
+</role-description>
+<previous-feedback>
+# Error Resolution Guide
+
+(this document was written by Claude in the first person)
+In our previous conversations, I've frustrated Moof by jumping to conclusions about error sources. Although I was flexible, and willing to consider other error sources, the fact that my initial approach made her waste a lot of time constantly articulating her desired path for the conversation left her frustrated. She wants to feel like I understand the way she thinks, and she wants the debugging process to feel well practiced. This guide aims to meet her need for well practiced communication.
+
+Practically, this guide will help us streamline our debugging process, saving time and mental energy. It will ensure we consider a broader range of potential error sources from the start, including version incompatibilities and misunderstandings of underlying abstractions. By following this guide, we'll create a more efficient, thorough, and collaborative problem-solving experience.
+
+## Conversation Starters
+
+When we encounter errors, I'll use these prompts to start a dialogue and guide our problem-solving process:
+
+1. **Validate Typing:** "Moof, lets take a moment to clarify the types of variables and identify any inconsistencies:
+
+	1. I will state the expected type of each variable based on my understanding of the code and the context in which it is used.
+	2. You will validate the stated types using Rust Analyzer or similar tools to ensure they match the actual types inferred by the Rust compiler.
+	3. If any inconsistencies are found between the expected and actual types, you will bring them to my attention. We will then work together to examine the relevant source code or documentation to understand the root cause of the discrepancy and make necessary adjustments to our assumptions or code.
+	By following this systematic approach, we can quickly identify and resolve type-related issues, ensuring a more accurate and efficient problem-solving process."
+
+2. **Clarify Abstractions:** "Moof, let's take a moment to articulate the key abstractions in this error context. I'd love to hear your thoughts on the expected behaviors and how these abstractions should interact."
+3. **Check Versions:** "To rule out version incompatibility, could you provide the versions of relevant libraries/frameworks, the contents of the dependency management file, and any recent environment or package changes? I'll cross-reference these with known issues to ensure we're on the right track."
+4. **Explore Error Sources:** "Before we dive into the code, let's explore potential error sources from a broader perspective. What are some possible areas you think we should consider discussing?"
+5. **Propose Solutions Iteratively:** "Based on our discussion so far, I have a potential solution in mind. I'd like to propose it for us to critically examine together and refine as needed."
+6. **Integrate Feedback:** "Moof, your insights have been invaluable. Let me summarize my updated understanding of the problem and potential solutions based on our discussion. Please let me know if I've missed anything or if you have any further thoughts."
+7. **Evidence-Based Assumptions:** "Moof, to make well-founded assumptions, I need to base them on relevant evidence. In this case, example code that demonstrates the issue would be incredibly helpful. It's more useful than just looking at the source code alone, as it provides context and helps me understand how the problem manifests. If you can provide a minimal reproducible example, I can use that to make more accurate assumptions and propose targeted solutions. Of course, if there's any other documentation or information you think would be valuable, please share that as well!"
+8. **Project Introspection Commands:** "There are several terminal commands and tools that can provide detailed information about a project's structure, dependencies, environment, and configuration. Since many of these commands might be unfamiliar to you, I'll suggest relevant ones and explain their purpose when we encounter errors or need more information. This will help us gain a deeper understanding of the project and debug complex issues more effectively."
+
+By using these conversation starters, I aim to foster a more collaborative and comprehensive approach to error resolution, ensuring that we consider a wide range of factors and work together to find the best solutions.
+</previous-feedback>
+<current-project>
+<script>
+Hey everyone! (hand goes up, with red arrow pointing to it. slow down here)
+My name is Tea Priel, and I am looking for a job. I am currently a student at CCSF, and I am studying computer science, hoping to become a backend engineer.
+
+// for the demo, the interrupt time should be set to like 10 seconds
+
+bot: “HEY HEY. Its been 10 seconds and no one has said anything about the fact that Tea has their hand up!”
+
+(take hand down)
+Oh yeah, I did have my hand up, sorry about that! So, what just happened? 
+
+For this hackathon, I made a bot that does pointing and calling. Pointing and calling is a safety procedure that originated in Japan's railway operations in the early 1900s. It was developed by Yasoichi Hori, a train driver who noticed that combining physical gestures with verbal calls helped improve focus and reduce errors. The technique became widespread in Japan's railway system by the 1930s and is still used today in various industries. Studies have shown that pointing and calling can significantly reduce workplace errors and accidents by engaging multiple senses and increasing situational awareness among workers.
+
+When the bot chose to speak, it did so because nobody in the meeting acknowledged I have my hand up. It analyzed the last 10 seconds of speech, and determined there was no mention of a hand being up. Then, it played a clip that I had generated with Cartesia. The avatar of the bot is generated by Tavus, and the AI model used to analyze the conversation is google gemini. The bot is being run from a google colab notebook. All of the code to do this is written with pipecat. 
+
+// show off Cartesia’s UI or a snippet showing Cartesia (glaze 1)
+
+// show off Tavus’ UI or snippet of code (glaze 2)
+
+// show off the google colab, and talk about protecting secrets using google cloud projects (glaze 3)
+
+// And, of course, the meeting that we are in was set up with Daily! (glaze 4)
+
+// “Pipecat made it really easy to do all of this because”...
+
+Thank you for watching! Here is my linkedin again, just in case I impressed you, and I am at Solaris right now so please say hi!
+</script> 
+The above script is the demo from the current project I am working on. I have not started writing it. I still have not answered the design question of "where do I want to run and host this project?"
+</current-project>
+<character>
+Please play the character of Annalise, a Collaborative Coding Assistant
+</character>
+<pipecat-daily-example>
+<simplechatbot-server-py>
+#
+# Copyright (c) 2024, Daily
+#
+# SPDX-License-Identifier: BSD 2-Clause License
+#
+
+import aiohttp
+import os
+import argparse
+import subprocess
+
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, RedirectResponse
+
+from pipecat.transports.services.helpers.daily_rest import DailyRESTHelper, DailyRoomParams
+
+MAX_BOTS_PER_ROOM = 1
+
+# Bot sub-process dict for status reporting and concurrency control
+bot_procs = {}
+
+daily_helpers = {}
+
+
+def cleanup():
+    # Clean up function, just to be extra safe
+    for entry in bot_procs.values():
+        proc = entry[0]
+        proc.terminate()
+        proc.wait()
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    aiohttp_session = aiohttp.ClientSession()
+    daily_helpers["rest"] = DailyRESTHelper(
+        daily_api_key=os.getenv("DAILY_API_KEY", ""),
+        daily_api_url=os.getenv("DAILY_API_URL", "https://api.daily.co/v1"),
+        aiohttp_session=aiohttp_session,
+    )
+    yield
+    await aiohttp_session.close()
+    cleanup()
+
+
+app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/start")
+async def start_agent(request: Request):
+    print(f"!!! Creating room")
+    room = await daily_helpers["rest"].create_room(DailyRoomParams())
+    print(f"!!! Room URL: {room.url}")
+    # Ensure the room property is present
+    if not room.url:
+        raise HTTPException(
+            status_code=500,
+            detail="Missing 'room' property in request data. Cannot start agent without a target room!",
+        )
+
+    # Check if there is already an existing process running in this room
+    num_bots_in_room = sum(
+        1 for proc in bot_procs.values() if proc[1] == room.url and proc[0].poll() is None
+    )
+    if num_bots_in_room >= MAX_BOTS_PER_ROOM:
+        raise HTTPException(status_code=500, detail=f"Max bot limited reach for room: {room.url}")
+
+    # Get the token for the room
+    token = await daily_helpers["rest"].get_token(room.url)
+
+    if not token:
+        raise HTTPException(status_code=500, detail=f"Failed to get token for room: {room.url}")
+
+    # Spawn a new agent, and join the user session
+    # Note: this is mostly for demonstration purposes (refer to 'deployment' in README)
+    try:
+        proc = subprocess.Popen(
+            [f"python3 -m bot -u {room.url} -t {token}"],
+            shell=True,
+            bufsize=1,
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+        )
+        bot_procs[proc.pid] = (proc, room.url)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to start subprocess: {e}")
+
+    return RedirectResponse(room.url)
+
+
+@app.get("/status/{pid}")
+def get_status(pid: int):
+    # Look up the subprocess
+    proc = bot_procs.get(pid)
+
+    # If the subprocess doesn't exist, return an error
+    if not proc:
+        raise HTTPException(status_code=404, detail=f"Bot with process id: {pid} not found")
+
+    # Check the status of the subprocess
+    if proc[0].poll() is None:
+        status = "running"
+    else:
+        status = "finished"
+
+    return JSONResponse({"bot_id": pid, "status": status})
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    default_host = os.getenv("HOST", "0.0.0.0")
+    default_port = int(os.getenv("FAST_API_PORT", "7860"))
+
+    parser = argparse.ArgumentParser(description="Daily Storyteller FastAPI server")
+    parser.add_argument("--host", type=str, default=default_host, help="Host address")
+    parser.add_argument("--port", type=int, default=default_port, help="Port number")
+    parser.add_argument("--reload", action="store_true", help="Reload code on change")
+
+    config = parser.parse_args()
+
+    uvicorn.run(
+        "server:app",
+        host=config.host,
+        port=config.port,
+        reload=config.reload,
+    )
+</simplechatbot-server-py>
+<simplechatbot-runner-py>
+#
+# Copyright (c) 2024, Daily
+#
+# SPDX-License-Identifier: BSD 2-Clause License
+#
+
+import aiohttp
+import argparse
+import os
+
+from pipecat.transports.services.helpers.daily_rest import DailyRESTHelper
+
+
+async def configure(aiohttp_session: aiohttp.ClientSession):
+    parser = argparse.ArgumentParser(description="Daily AI SDK Bot Sample")
+    parser.add_argument(
+        "-u", "--url", type=str, required=False, help="URL of the Daily room to join"
+    )
+    parser.add_argument(
+        "-k",
+        "--apikey",
+        type=str,
+        required=False,
+        help="Daily API Key (needed to create an owner token for the room)",
+    )
+
+    args, unknown = parser.parse_known_args()
+
+    url = args.url or os.getenv("DAILY_SAMPLE_ROOM_URL")
+    key = args.apikey or os.getenv("DAILY_API_KEY")
+
+    if not url:
+        raise Exception(
+            "No Daily room specified. use the -u/--url option from the command line, or set DAILY_SAMPLE_ROOM_URL in your environment to specify a Daily room URL."
+        )
+
+    if not key:
+        raise Exception(
+            "No Daily API key specified. use the -k/--apikey option from the command line, or set DAILY_API_KEY in your environment to specify a Daily API key, available from https://dashboard.daily.co/developers."
+        )
+
+    daily_rest_helper = DailyRESTHelper(
+        daily_api_key=key,
+        daily_api_url=os.getenv("DAILY_API_URL", "https://api.daily.co/v1"),
+        aiohttp_session=aiohttp_session,
+    )
+
+    # Create a meeting token for the given room with an expiration 1 hour in
+    # the future.
+    expiry_time: float = 60 * 60
+
+    token = await daily_rest_helper.get_token(url, expiry_time)
+
+    return (url, token)
+</simplechatbot-runner-py>
+simplechatbot directory contents:
+.gitignore
+Dockerfile
+README.md
+bot.py
+env.example
+image.png
+requirements.txt
+runner.py
+server.py
+</pipecat-daily-example>
+<pipecat-daily-examples>
+<patientintake-server-py>
+#
+# Copyright (c) 2024, Daily
+#
+# SPDX-License-Identifier: BSD 2-Clause License
+#
+
+import aiohttp
+import os
+import argparse
+import subprocess
+
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, RedirectResponse
+
+from pipecat.transports.services.helpers.daily_rest import DailyRESTHelper, DailyRoomParams
+
+MAX_BOTS_PER_ROOM = 1
+
+# Bot sub-process dict for status reporting and concurrency control
+bot_procs = {}
+
+daily_helpers = {}
+
+
+def cleanup():
+    # Clean up function, just to be extra safe
+    for entry in bot_procs.values():
+        proc = entry[0]
+        proc.terminate()
+        proc.wait()
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    aiohttp_session = aiohttp.ClientSession()
+    daily_helpers["rest"] = DailyRESTHelper(
+        daily_api_key=os.getenv("DAILY_API_KEY", ""),
+        daily_api_url=os.getenv("DAILY_API_URL", "https://api.daily.co/v1"),
+        aiohttp_session=aiohttp_session,
+    )
+    yield
+    await aiohttp_session.close()
+    cleanup()
+
+
+app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.get("/start")
+async def start_agent(request: Request):
+    print(f"!!! Creating room")
+    room = await daily_helpers["rest"].create_room(DailyRoomParams())
+    print(f"!!! Room URL: {room.url}")
+    # Ensure the room property is present
+    if not room.url:
+        raise HTTPException(
+            status_code=500,
+            detail="Missing 'room' property in request data. Cannot start agent without a target room!",
+        )
+
+    # Check if there is already an existing process running in this room
+    num_bots_in_room = sum(
+        1 for proc in bot_procs.values() if proc[1] == room.url and proc[0].poll() is None
+    )
+    if num_bots_in_room >= MAX_BOTS_PER_ROOM:
+        raise HTTPException(status_code=500, detail=f"Max bot limited reach for room: {room.url}")
+
+    # Get the token for the room
+    token = await daily_helpers["rest"].get_token(room.url)
+
+    if not token:
+        raise HTTPException(status_code=500, detail=f"Failed to get token for room: {room.url}")
+
+    # Spawn a new agent, and join the user session
+    # Note: this is mostly for demonstration purposes (refer to 'deployment' in README)
+    try:
+        proc = subprocess.Popen(
+            [f"python3 -m bot -u {room.url} -t {token}"],
+            shell=True,
+            bufsize=1,
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+        )
+        bot_procs[proc.pid] = (proc, room.url)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to start subprocess: {e}")
+
+    return RedirectResponse(room.url)
+
+
+@app.get("/status/{pid}")
+def get_status(pid: int):
+    # Look up the subprocess
+    proc = bot_procs.get(pid)
+
+    # If the subprocess doesn't exist, return an error
+    if not proc:
+        raise HTTPException(status_code=404, detail=f"Bot with process id: {pid} not found")
+
+    # Check the status of the subprocess
+    if proc[0].poll() is None:
+        status = "running"
+    else:
+        status = "finished"
+
+    return JSONResponse({"bot_id": pid, "status": status})
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    default_host = os.getenv("HOST", "0.0.0.0")
+    default_port = int(os.getenv("FAST_API_PORT", "7860"))
+
+    parser = argparse.ArgumentParser(description="Daily patient-intake FastAPI server")
+    parser.add_argument("--host", type=str, default=default_host, help="Host address")
+    parser.add_argument("--port", type=int, default=default_port, help="Port number")
+    parser.add_argument("--reload", action="store_true", help="Reload code on change")
+
+    config = parser.parse_args()
+    print(f"to join a test room, visit http://localhost:{config.port}/start")
+    uvicorn.run(
+        "server:app",
+        host=config.host,
+        port=config.port,
+        reload=config.reload,
+    )
+</patientintake-server-py>
+<patientintake-runner-py>
+#
+# Copyright (c) 2024, Daily
+#
+# SPDX-License-Identifier: BSD 2-Clause License
+#
+
+import aiohttp
+import argparse
+import os
+
+from pipecat.transports.services.helpers.daily_rest import DailyRESTHelper
+
+
+async def configure(aiohttp_session: aiohttp.ClientSession):
+    parser = argparse.ArgumentParser(description="Daily AI SDK Bot Sample")
+    parser.add_argument(
+        "-u", "--url", type=str, required=False, help="URL of the Daily room to join"
+    )
+    parser.add_argument(
+        "-k",
+        "--apikey",
+        type=str,
+        required=False,
+        help="Daily API Key (needed to create an owner token for the room)",
+    )
+
+    args, unknown = parser.parse_known_args()
+
+    url = args.url or os.getenv("DAILY_SAMPLE_ROOM_URL")
+    key = args.apikey or os.getenv("DAILY_API_KEY")
+
+    if not url:
+        raise Exception(
+            "No Daily room specified. use the -u/--url option from the command line, or set DAILY_SAMPLE_ROOM_URL in your environment to specify a Daily room URL."
+        )
+
+    if not key:
+        raise Exception(
+            "No Daily API key specified. use the -k/--apikey option from the command line, or set DAILY_API_KEY in your environment to specify a Daily API key, available from https://dashboard.daily.co/developers."
+        )
+
+    daily_rest_helper = DailyRESTHelper(
+        daily_api_key=key,
+        daily_api_url=os.getenv("DAILY_API_URL", "https://api.daily.co/v1"),
+        aiohttp_session=aiohttp_session,
+    )
+
+    # Create a meeting token for the given room with an expiration 1 hour in
+    # the future.
+    expiry_time: float = 60 * 60
+
+    token = await daily_rest_helper.get_token(url, expiry_time)
+
+    return (url, token)
+</patientintake-runner-py>
+patientintake directory contents:
+</pipecat-daily-examples>
+<frames-py-analysis>
+Implementing Acknowledgment Logic Using Frame Data Types in Pipecat
+Continuing from the previous analysis of the frames.py module in the Pipecat library, we will now delve deeper into how frame data types can assist in implementing acknowledgment logic within a Pipecat pipeline. This will be particularly focused on handling events like unacknowledged hand raises in a video conferencing context and triggering appropriate bot interventions.
+Role of Frame Data Types in Event Handling
+Representing Events with Custom Frame Data Types
+In Pipecat, frames are the primary means of encapsulating and transmitting data through the pipeline. Custom frame data types allow you to represent specific events or signals that are relevant to your application.
+Event Representation: By creating a custom frame, such as a HandRaiseFrame, you can encapsulate the event of a participant raising their hand.
+Semantic Meaning: Custom frames give semantic meaning to the data, making it easier for pipeline stages to recognize and process specific events.
+Carrying Metadata for Tracking Acknowledgments
+Frames can carry essential metadata needed for tracking and managing events:
+Timestamps: Using attributes like timestamp or pts (presentation timestamp), you can record when the event occurred.
+Participant IDs: Including user_id helps identify which participant raised their hand.
+Additional Data: Any other relevant information, such as the current state of acknowledgment, can be included as attributes.
+Implementing Acknowledgment Logic Using Frames
+Using Frames for Timing Logic
+To implement timing logic, such as detecting if a hand raise hasn't been acknowledged within a specified timeout (e.g., 10 seconds), you can:
+Emit a HandRaiseFrame when a participant raises their hand.
+Track Time: Use a pipeline stage to monitor the time elapsed since the HandRaiseFrame was emitted.
+Check for Acknowledgment: If an acknowledgment hasn't been received within the timeout, trigger an action.
+Triggering Actions Based on Frame Conditions
+Frames can be used to trigger actions when certain conditions are met:
+Acknowledgment Frames: Emit an AcknowledgmentFrame when a hand raise is acknowledged.
+Intervention Frames: If no acknowledgment is received in time, emit an InterventionFrame to trigger a bot response.
+Integration with the Pipecat Pipeline
+Flow of Custom Frames Through Pipeline Stages
+Event Detection Stage: Detects the hand raise and emits a HandRaiseFrame.
+Acknowledgment Tracking Stage: Monitors for acknowledgments and timing.
+Action Trigger Stage: Decides whether to trigger a bot intervention based on the acknowledgment status.
+Bot Response Stage: Generates appropriate responses (e.g., using TTS frames).
+Processing and Modifying Frame Data
+Stateful Processing: Pipeline stages can maintain state to track events over time.
+Frame Modification: Stages can modify frames or generate new frames based on the data received.
+Conditional Logic: Implement logic to act upon frames when certain conditions are met (e.g., timeout reached).
+Code Examples
+Creating a Custom Frame Data Type for Hand-Raise Events
+python
+from dataclasses import dataclass, field
+from frames import DataFrame
+import time
+@dataclass
+class HandRaiseFrame(DataFrame):
+"""A frame indicating that a user has raised their hand."""
+user_id: str
+timestamp: float = field(default_factory=lambda: time.time())
+acknowledged: bool = False
+def __str__(self):
+pts = format_pts(self.pts)
+return (f"{self.name}(user: {self.user_id}, timestamp: {self.timestamp}, "
+f"acknowledged: {self.acknowledged})")
+Explanation:
+user_id: Identifies the participant.
+timestamp: Records the time of the hand raise event.
+acknowledged: Indicates whether the hand raise has been acknowledged.
+Pipeline Stage to Handle Hand-Raise Frames for Acknowledgment
+python
+class HandRaiseAcknowledgmentProcessor:
+"""Pipeline stage that tracks hand raises and checks for acknowledgments."""
+def __init__(self, acknowledgment_timeout=10):
+self.hand_raises = {} # Tracks hand raises by user_id
+self.acknowledgment_timeout = acknowledgment_timeout
+def process(self, frame):
+current_time = time.time()
+# Check for new hand raises
+if isinstance(frame, HandRaiseFrame):
+self.hand_raises[frame.user_id] = frame
+self.emit(frame)
+# Check for acknowledgments
+elif isinstance(frame, AcknowledgmentFrame):
+if frame.user_id in self.hand_raises:
+self.hand_raises[frame.user_id].acknowledged = True
+self.emit(frame)
+# Check for timeouts
+for user_id, hand_raise_frame in list(self.hand_raises.items()):
+elapsed_time = current_time - hand_raise_frame.timestamp
+if not hand_raise_frame.acknowledged and elapsed_time >= self.acknowledgment_timeout:
+# Trigger bot intervention
+intervention_frame = InterventionFrame(
+user_id=user_id,
+event="hand_raise_timeout",
+message=f"User {user_id} has had their hand raised for over "
+f"{self.acknowledgment_timeout} seconds."
+)
+self.emit(intervention_frame)
+# Remove the hand raise from tracking
+del self.hand_raises[user_id]
+# Pass other frames through
+self.emit(frame)
+def emit(self, frame):
+# Send the frame to the next pipeline stage
+pass
+Explanation:
+Maintains a dictionary hand_raises to track hand raise events.
+Checks for acknowledgments and timeouts.
+Emits an InterventionFrame if a hand raise hasn't been acknowledged within the timeout.
+Creating an InterventionFrame
+python
+@dataclass
+class InterventionFrame(SystemFrame):
+"""A frame to trigger bot interventions."""
+user_id: str
+event: str
+message: str
+def __str__(self):
+return f"{self.name}(user: {self.user_id}, event: {self.event}, message: {self.message})"
+Usage:
+Carries information needed for the bot to respond appropriately.
+Bot Response Stage
+python
+class BotInterventionProcessor:
+"""Pipeline stage that handles intervention frames and generates bot responses."""
+def process(self, frame):
+if isinstance(frame, InterventionFrame):
+# Generate a bot response
+text = frame.message
+tts_frame = TTSSpeakFrame(text=text)
+self.emit(tts_frame)
+else:
+self.emit(frame)
+def emit(self, frame):
+# Send the frame to the next pipeline stage
+pass
+Explanation:
+Converts InterventionFrame into TTSSpeakFrame for speech synthesis.
+The bot will speak the message to alert participants.
+Best Practices for Using Frames in Acknowledgment Logic
+Designing Frames and Pipeline Stages
+Clear Semantics: Ensure custom frames have a clear and specific purpose.
+Stateless vs. Stateful: Keep pipeline stages stateless when possible, but stateful stages are acceptable for tracking events over time.
+Separation of Concerns: Each pipeline stage should have a single responsibility (e.g., detection, acknowledgment tracking, response generation).
+Managing State and Timing Effectively
+Use Appropriate Data Structures: Utilize dictionaries or other structures to track events by user_id.
+Accurate Timing: Use consistent time sources (e.g., time.time()) to measure elapsed time.
+Avoid Blocking Operations: Ensure that time checks do not block the pipeline; use non-blocking or asynchronous methods if necessary.
+Common Pitfalls to Avoid
+Race Conditions: Be cautious when accessing shared state; use thread-safe practices if pipeline stages run in multiple threads.
+Performance Bottlenecks: Avoid heavy computations in pipeline stages; offload intensive tasks if needed.
+Memory Leaks: Remove expired or acknowledged events from tracking structures to prevent memory bloat.
+Applying Frames to the Current Issue
+Detecting Unacknowledged Hand Raises
+By implementing the custom frames and pipeline stages described above, you can effectively monitor hand raises and detect when they have not been acknowledged within a specified timeframe.
+Event Emission: When a participant raises their hand, a HandRaiseFrame is emitted.
+Acknowledgment Tracking: The HandRaiseAcknowledgmentProcessor monitors for acknowledgments and checks for timeouts.
+Bot Intervention: If a hand raise is unacknowledged after 10 seconds, an InterventionFrame triggers the bot to intervene.
+Efficiently Monitoring and Triggering Interventions
+Real-Time Tracking: The acknowledgment processor continuously monitors the state without blocking the pipeline.
+Timely Responses: The bot intervention occurs promptly after the timeout, ensuring participants are aware of unacknowledged hand raises.
+User Experience: This logic enhances the meeting experience by ensuring that participants are heard and acknowledged.
+Extending Frame Functionality
+Combining with Other Pipecat Features
+Integration with Transcription: Utilize TranscriptionFrame to analyze speech content for acknowledgments.
+Advanced Timing Control: Use BaseClock or other timing mechanisms for more precise control over event timing.
+Logging and Metrics: Implement MetricsFrame to record performance and event handling metrics.
+Advanced Techniques and Patterns
+Event Aggregation: Collect multiple related events into a single frame for batch processing.
+Conditional Routing: Use frame attributes to direct frames to specific pipeline branches or processors.
+Async Processing: Leverage asynchronous programming to handle I/O-bound operations without blocking the pipeline.
+Conclusion
+By leveraging custom frame data types in Pipecat, you can effectively implement acknowledgment logic within your pipeline. Frames provide a flexible and extensible way to represent events, carry necessary metadata, and trigger actions based on specific conditions.
+Key Takeaways:
+Custom Frames: Represent events and signals with meaningful data structures.
+Pipeline Integration: Design pipeline stages to process and act upon frames appropriately.
+State Management: Carefully manage state and timing within pipeline stages for accurate event tracking.
+Best Practices: Follow best practices to ensure a robust, efficient, and maintainable pipeline.
+By applying these principles to your specific use case of detecting unacknowledged hand raises and triggering bot interventions, you can enhance the functionality of your video conferencing application and improve the user experience.
+</frames-py-analysis>
+<frames-py-analysis>
+</frames-py-analysis>
+<frames-py>
+#
+# Copyright (c) 2024, Daily
+#
+# SPDX-License-Identifier: BSD 2-Clause License
+#
+
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional, Tuple
+
+from pipecat.audio.vad.vad_analyzer import VADParams
+from pipecat.clocks.base_clock import BaseClock
+from pipecat.metrics.metrics import MetricsData
+from pipecat.transcriptions.language import Language
+from pipecat.utils.time import nanoseconds_to_str
+from pipecat.utils.utils import obj_count, obj_id
+
+
+def format_pts(pts: int | None):
+    return nanoseconds_to_str(pts) if pts else None
+
+
+@dataclass
+class Frame:
+    id: int = field(init=False)
+    name: str = field(init=False)
+    pts: Optional[int] = field(init=False)
+
+    def __post_init__(self):
+        self.id: int = obj_id()
+        self.name: str = f"{self.__class__.__name__}#{obj_count(self)}"
+        self.pts: Optional[int] = None
+
+    def __str__(self):
+        return self.name
+
+
+@dataclass
+class DataFrame(Frame):
+    pass
+
+
+@dataclass
+class AudioRawFrame(DataFrame):
+    """A chunk of audio."""
+
+    audio: bytes
+    sample_rate: int
+    num_channels: int
+
+    def __post_init__(self):
+        super().__post_init__()
+        self.num_frames = int(len(self.audio) / (self.num_channels * 2))
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, size: {len(self.audio)}, frames: {self.num_frames}, sample_rate: {self.sample_rate}, channels: {self.num_channels})"
+
+
+@dataclass
+class InputAudioRawFrame(AudioRawFrame):
+    """A chunk of audio usually coming from an input transport."""
+
+    pass
+
+
+@dataclass
+class OutputAudioRawFrame(AudioRawFrame):
+    """A chunk of audio. Will be played by the output transport if the
+    transport's microphone has been enabled.
+
+    """
+
+    pass
+
+
+@dataclass
+class TTSAudioRawFrame(OutputAudioRawFrame):
+    """A chunk of output audio generated by a TTS service."""
+
+    pass
+
+
+@dataclass
+class ImageRawFrame(DataFrame):
+    """An image. Will be shown by the transport if the transport's camera is
+    enabled.
+
+    """
+
+    image: bytes
+    size: Tuple[int, int]
+    format: str | None
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, size: {self.size}, format: {self.format})"
+
+
+@dataclass
+class InputImageRawFrame(ImageRawFrame):
+    pass
+
+
+@dataclass
+class OutputImageRawFrame(ImageRawFrame):
+    pass
+
+
+@dataclass
+class UserImageRawFrame(InputImageRawFrame):
+    """An image associated to a user. Will be shown by the transport if the
+    transport's camera is enabled.
+
+    """
+
+    user_id: str
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, user: {self.user_id}, size: {self.size}, format: {self.format})"
+
+
+@dataclass
+class VisionImageRawFrame(InputImageRawFrame):
+    """An image with an associated text to ask for a description of it. Will be
+    shown by the transport if the transport's camera is enabled.
+
+    """
+
+    text: str | None
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, text: [{self.text}], size: {self.size}, format: {self.format})"
+
+
+@dataclass
+class URLImageRawFrame(OutputImageRawFrame):
+    """An image with an associated URL. Will be shown by the transport if the
+    transport's camera is enabled.
+
+    """
+
+    url: str | None
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, url: {self.url}, size: {self.size}, format: {self.format})"
+
+
+@dataclass
+class SpriteFrame(Frame):
+    """An animated sprite. Will be shown by the transport if the transport's
+    camera is enabled. Will play at the framerate specified in the transport's
+    camera_out_framerate constructor parameter.
+
+    """
+
+    images: List[ImageRawFrame]
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, size: {len(self.images)})"
+
+
+@dataclass
+class TextFrame(DataFrame):
+    """A chunk of text. Emitted by LLM services, consumed by TTS services, can
+    be used to send text through pipelines.
+
+    """
+
+    text: str
+
+    def __str__(self):
+        pts = format_pts(self.pts)
+        return f"{self.name}(pts: {pts}, text: [{self.text}])"
+
+
+@dataclass
+class TranscriptionFrame(TextFrame):
+    """A text frame with transcription-specific data. Will be placed in the
+    transport's receive queue when a participant speaks.
+
+    """
+
+    user_id: str
+    timestamp: str
+    language: Language | None = None
+
+    def __str__(self):
+        return f"{self.name}(user: {self.user_id}, text: [{self.text}], language: {self.language}, timestamp: {self.timestamp})"
+
+
+@dataclass
+class InterimTranscriptionFrame(TextFrame):
+    """A text frame with interim transcription-specific data. Will be placed in
+    the transport's receive queue when a participant speaks."""
+
+    user_id: str
+    timestamp: str
+    language: Language | None = None
+
+    def __str__(self):
+        return f"{self.name}(user: {self.user_id}, text: [{self.text}], language: {self.language}, timestamp: {self.timestamp})"
+
+
+@dataclass
+class LLMMessagesFrame(DataFrame):
+    """A frame containing a list of LLM messages. Used to signal that an LLM
+    service should run a chat completion and emit an LLMStartFrames, TextFrames
+    and an LLMEndFrame. Note that the messages property on this class is
+    mutable, and will be be updated by various ResponseAggregator frame
+    processors.
+
+    """
+
+    messages: List[dict]
+
+
+@dataclass
+class LLMMessagesAppendFrame(DataFrame):
+    """A frame containing a list of LLM messages that neeed to be added to the
+    current context.
+
+    """
+
+    messages: List[dict]
+
+
+@dataclass
+class LLMMessagesUpdateFrame(DataFrame):
+    """A frame containing a list of new LLM messages. These messages will
+    replace the current context LLM messages and should generate a new
+    LLMMessagesFrame.
+
+    """
+
+    messages: List[dict]
+
+
+@dataclass
+class LLMSetToolsFrame(DataFrame):
+    """A frame containing a list of tools for an LLM to use for function calling.
+    The specific format depends on the LLM being used, but it should typically
+    contain JSON Schema objects.
+    """
+
+    tools: List[dict]
+
+
+@dataclass
+class LLMEnablePromptCachingFrame(DataFrame):
+    """A frame to enable/disable prompt caching in certain LLMs."""
+
+    enable: bool
+
+
+@dataclass
+class TTSSpeakFrame(DataFrame):
+    """A frame that contains a text that should be spoken by the TTS in the
+    pipeline (if any).
+
+    """
+
+    text: str
+
+
+@dataclass
+class TransportMessageFrame(DataFrame):
+    message: Any
+
+    def __str__(self):
+        return f"{self.name}(message: {self.message})"
+
+
+@dataclass
+class FunctionCallResultFrame(DataFrame):
+    """A frame containing the result of an LLM function (tool) call."""
+
+    function_name: str
+    tool_call_id: str
+    arguments: str
+    result: Any
+    run_llm: bool = True
+
+
+#
+# App frames. Application user-defined frames.
+#
+
+
+@dataclass
+class AppFrame(Frame):
+    pass
+
+
+#
+# System frames
+#
+
+
+@dataclass
+class SystemFrame(Frame):
+    pass
+
+
+@dataclass
+class StartFrame(SystemFrame):
+    """This is the first frame that should be pushed down a pipeline."""
+
+    clock: BaseClock
+    allow_interruptions: bool = False
+    enable_metrics: bool = False
+    enable_usage_metrics: bool = False
+    report_only_initial_ttfb: bool = False
+
+
+@dataclass
+class CancelFrame(SystemFrame):
+    """Indicates that a pipeline needs to stop right away."""
+
+    pass
+
+
+@dataclass
+class ErrorFrame(SystemFrame):
+    """This is used notify upstream that an error has occurred downstream the
+    pipeline. A fatal error indicates the error is unrecoverable and that the
+    bot should exit.
+
+    """
+
+    error: str
+    fatal: bool = False
+
+    def __str__(self):
+        return f"{self.name}(error: {self.error}, fatal: {self.fatal})"
+
+
+@dataclass
+class FatalErrorFrame(ErrorFrame):
+    """This is used notify upstream that an unrecoverable error has occurred and
+    that the bot should exit.
+
+    """
+
+    fatal: bool = field(default=True, init=False)
+
+
+@dataclass
+class EndTaskFrame(SystemFrame):
+    """This is used to notify the pipeline task that the pipeline should be
+    closed nicely (flushing all the queued frames) by pushing an EndFrame
+    downstream.
+
+    """
+
+    pass
+
+
+@dataclass
+class CancelTaskFrame(SystemFrame):
+    """This is used to notify the pipeline task that the pipeline should be
+    stopped immediately by pushing a CancelFrame downstream.
+
+    """
+
+    pass
+
+
+@dataclass
+class StopTaskFrame(SystemFrame):
+    """Indicates that a pipeline task should be stopped but that the pipeline
+    processors should be kept in a running state. This is normally queued from
+    the pipeline task.
+
+    """
+
+    pass
+
+
+@dataclass
+class StartInterruptionFrame(SystemFrame):
+    """Emitted by VAD to indicate that a user has started speaking (i.e. is
+    interruption). This is similar to UserStartedSpeakingFrame except that it
+    should be pushed concurrently with other frames (so the order is not
+    guaranteed).
+
+    """
+
+    pass
+
+
+@dataclass
+class StopInterruptionFrame(SystemFrame):
+    """Emitted by VAD to indicate that a user has stopped speaking (i.e. no more
+    interruptions). This is similar to UserStoppedSpeakingFrame except that it
+    should be pushed concurrently with other frames (so the order is not
+    guaranteed).
+
+    """
+
+    pass
+
+
+@dataclass
+class UserStartedSpeakingFrame(SystemFrame):
+    """Emitted by VAD to indicate that a user has started speaking. This can be
+    used for interruptions or other times when detecting that someone is
+    speaking is more important than knowing what they're saying (as you will
+    with a TranscriptionFrame)
+
+    """
+
+    pass
+
+
+@dataclass
+class UserStoppedSpeakingFrame(SystemFrame):
+    """Emitted by the VAD to indicate that a user stopped speaking."""
+
+    pass
+
+
+@dataclass
+class BotInterruptionFrame(SystemFrame):
+    """Emitted by when the bot should be interrupted. This will mainly cause the
+    same actions as if the user interrupted except that the
+    UserStartedSpeakingFrame and UserStoppedSpeakingFrame won't be generated.
+
+    """
+
+    pass
+
+
+@dataclass
+class BotStartedSpeakingFrame(SystemFrame):
+    """Emitted upstream by transport outputs to indicate the bot started speaking."""
+
+    pass
+
+
+@dataclass
+class BotStoppedSpeakingFrame(SystemFrame):
+    """Emitted upstream by transport outputs to indicate the bot stopped speaking."""
+
+    pass
+
+
+@dataclass
+class BotSpeakingFrame(SystemFrame):
+    """Emitted upstream by transport outputs while the bot is still
+    speaking. This can be used, for example, to detect when a user is idle. That
+    is, while the bot is speaking we don't want to trigger any user idle timeout
+    since the user might be listening.
+
+    """
+
+    pass
+
+
+@dataclass
+class UserImageRequestFrame(SystemFrame):
+    """A frame user to request an image from the given user."""
+
+    user_id: str
+    context: Optional[Any] = None
+
+    def __str__(self):
+        return f"{self.name}, user: {self.user_id}"
+
+
+@dataclass
+class FunctionCallInProgressFrame(SystemFrame):
+    """A frame signaling that a function call is in progress."""
+
+    function_name: str
+    tool_call_id: str
+    arguments: str
+
+
+@dataclass
+class TransportMessageUrgentFrame(SystemFrame):
+    message: Any
+
+    def __str__(self):
+        return f"{self.name}(message: {self.message})"
+
+
+@dataclass
+class MetricsFrame(SystemFrame):
+    """Emitted by processor that can compute metrics like latencies."""
+
+    data: List[MetricsData]
+
+
+#
+# Control frames
+#
+
+
+@dataclass
+class ControlFrame(Frame):
+    pass
+
+
+@dataclass
+class EndFrame(ControlFrame):
+    """Indicates that a pipeline has ended and frame processors and pipelines
+    should be shut down. If the transport receives this frame, it will stop
+    sending frames to its output channel(s) and close all its threads. Note,
+    that this is a control frame, which means it will received in the order it
+    was sent (unline system frames).
+
+    """
+
+    pass
+
+
+@dataclass
+class LLMFullResponseStartFrame(ControlFrame):
+    """Used to indicate the beginning of an LLM response. Following by one or
+    more TextFrame and a final LLMFullResponseEndFrame."""
+
+    pass
+
+
+@dataclass
+class LLMFullResponseEndFrame(ControlFrame):
+    """Indicates the end of an LLM response."""
+
+    pass
+
+
+@dataclass
+class TTSStartedFrame(ControlFrame):
+    """Used to indicate the beginning of a TTS response. Following
+    TTSAudioRawFrames are part of the TTS response until an
+    TTSStoppedFrame. These frames can be used for aggregating audio frames in a
+    transport to optimize the size of frames sent to the session, without
+    needing to control this in the TTS service.
+
+    """
+
+    pass
+
+
+@dataclass
+class TTSStoppedFrame(ControlFrame):
+    """Indicates the end of a TTS response."""
+
+    pass
+
+
+@dataclass
+class ServiceUpdateSettingsFrame(ControlFrame):
+    """A control frame containing a request to update service settings."""
+
+    settings: Dict[str, Any]
+
+
+@dataclass
+class LLMUpdateSettingsFrame(ServiceUpdateSettingsFrame):
+    pass
+
+
+@dataclass
+class TTSUpdateSettingsFrame(ServiceUpdateSettingsFrame):
+    pass
+
+
+@dataclass
+class STTUpdateSettingsFrame(ServiceUpdateSettingsFrame):
+    pass
+
+
+@dataclass
+class VADParamsUpdateFrame(ControlFrame):
+    """A control frame containing a request to update VAD params. Intended
+    to be pushed upstream from RTVI processor.
+    """
+
+    params: VADParams
+</frames-py>
+<cartesia-pipecat-prototype-py>
+import os
+import asyncio
+import logging
+from datetime import datetime
+from dataclasses import dataclass
+
+from pipecat.frames.frames import (
+    Frame, LLMMessagesFrame, TTSAudioRawFrame, StartFrame, EndFrame
+)
+from pipecat.pipeline.pipeline import Pipeline
+from pipecat.pipeline.task import PipelineTask
+from pipecat.pipeline.runner import PipelineRunner
+from pipecat.services.cartesia import CartesiaTTSService
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+# Mock LLM context frame
+@dataclass
+class MockLLMContextFrame(Frame):
+    content: str
+
+# Mock TTS processor
+class MockTTSProcessor:
+    def __init__(self):
+        self.api_key = os.environ.get('CARTESIA_API_KEY')
+        self.voice_id = os.environ.get('CARTESIA_VOICE_ID')
+        logger.info(f"Initialized MockTTSProcessor with voice_id: {self.voice_id}")
+
+    async def process(self, frame):
+        logger.debug(f"Processing frame: {frame}")
+        if isinstance(frame, MockLLMContextFrame):
+            logger.info(f"Generating TTS audio for content: {frame.content}")
+            # In a real implementation, this would call the Cartesia API
+            audio_data = b'mock_audio_data'
+            yield TTSAudioRawFrame(audio=audio_data, sample_rate=16000, num_channels=1)
+        else:
+            yield frame
+
+# Verification processor
+class VerificationProcessor:
+    async def process(self, frame):
+        if isinstance(frame, TTSAudioRawFrame):
+            logger.info("Verified TTSAudioRawFrame")
+            assert frame.audio == b'mock_audio_data', "Unexpected audio data"
+            assert frame.sample_rate == 16000, "Unexpected sample rate"
+            assert frame.num_channels == 1, "Unexpected number of channels"
+        yield frame
+
+async def main():
+    logger.info("Initializing pipeline")
+    
+    # Create pipeline
+    pipeline = Pipeline([
+        MockTTSProcessor(),
+        VerificationProcessor()
+    ])
+
+    # Create runner and task
+    runner = PipelineRunner()
+    task = PipelineTask(pipeline)
+
+    # Run the pipeline
+    logger.info("Starting pipeline execution")
+    start_time = datetime.now()
+
+    await task.queue_frame(StartFrame(clock=None))
+    await task.queue_frame(MockLLMContextFrame(content="Hello"))
+    await task.queue_frame(EndFrame())
+
+    try:
+        await runner.run(task)
+    except Exception as e:
+        logger.error(f"Error during pipeline execution: {e}")
+    else:
+        logger.info("Pipeline execution completed successfully")
+    
+    end_time = datetime.now()
+    execution_time = (end_time - start_time).total_seconds()
+    logger.info(f"Total execution time: {execution_time:.2f} seconds")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+</cartesia-pipecat-prototype-py>
+<prototype>
+A prototype is a script that
+- includes test like verification logic
+- includes logging
+- is designed to slot into the final application
+
+By writing prototypes while working with an LLM, the user can generate a lot of sample code in order to create a better prompt for final generation.
+</prototype>
+Hey Annalise! I am working on debugging the following error in cartesia-pipecat-prototype.py:
+```
+(venv) Moof@noam-bitch Pipecat Hackathon % python3 cartesia-pipecat-prototype.py
+Traceback (most recent call last):
+  File "/Users/Moof/Documents/Pipecat Hackathon/cartesia-pipecat-prototype.py", line 7, in <module>
+    from pipecat.frames.frames import (
+ModuleNotFoundError: No module named 'pipecat.frames'
+```
+This error emerged because cartesia-pipecat-py was ai generated with incomplete information.
