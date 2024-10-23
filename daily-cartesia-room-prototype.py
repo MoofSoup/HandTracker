@@ -14,7 +14,7 @@ async def main():
   transport = DailyTransport(
     room_url="https://pc-27c3722f19084f8e8562496f55d034fa.daily.co/testtesttest",
     token="",
-bot_name="Facillitator Agent",
+    bot_name="Facillitator Agent",
     params=DailyParams(audio_out_enabled=True))
 
   # Use Cartesia for Text-to-Speech
